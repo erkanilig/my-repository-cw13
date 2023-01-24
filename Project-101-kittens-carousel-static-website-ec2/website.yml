@@ -30,8 +30,8 @@ Resources:
       SecurityGroupIds: 
         - Ref: WebServerSecurityGroup
       Tags:
-        -Key: Name
-        Value: WebServer-Erkan
+       - Key: Name
+         Value: WebServer-Erkan
       UserData:
         Fn::Base64:
         |
@@ -39,15 +39,13 @@ Resources:
           yum update -y
           yum install httpd -y
           cd /var/www/html
-          
-      
+          FOLDER="https://raw.githubusercontent.com/erkanilig/my-repository-cw13/main/Project-101-kittens-carousel-static-website-ec2/static-web/"
+          wget ${FOLDER}index.html
+          wget ${FOLDER}cat0.jpg
+          wget ${FOLDER}cat1.jpg
+          wget ${FOLDER}cat2.jpg
+          wget ${FOLDER}cat3.png
+          systemctl start httpd
+          systemctl enable httpd
 
-
-
-
-
-
-
-
-
-# Outputs:
+  #Outputs
