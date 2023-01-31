@@ -7,7 +7,10 @@ Parameters:
   KeyPair:
     Description: Key Pair for EC2 Instance
     Type: AWS::EC2::KeyPair::KeyName
+<<<<<<< HEAD
   
+=======
+>>>>>>> 64f0b14ab2a68c79117a240c34d9dbc9edc89857
 Resources:
 
   WebServerSecurityGroup:
@@ -36,6 +39,7 @@ Resources:
       Tags:
       - Key: Name
         Value: WebServer
+<<<<<<< HEAD
       UserData: !Base64 |
         #!/bin/bash -x
         yum update -y
@@ -52,3 +56,7 @@ Resources:
         python3 app.py
 
 # Outputs:
+=======
+      UserData: "String"
+# Outputs:
+>>>>>>> 64f0b14ab2a68c79117a240c34d9dbc9edc89857
